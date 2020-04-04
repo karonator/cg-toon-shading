@@ -57,7 +57,7 @@
 						float2 tex_coord = float2(inp.uv.x + (i - 1) * dx, inp.uv.y + (j - 1) * dy);
 
 						float depth = tex2D(_CameraDepthTexture, tex_coord).r;
-						depth = Linear01Depth(depth) * 70;
+						depth = Linear01Depth(depth);
 						
 						GX += KernelX[i][j] * depth;
 						GY += KernelY[i][j] * depth;
